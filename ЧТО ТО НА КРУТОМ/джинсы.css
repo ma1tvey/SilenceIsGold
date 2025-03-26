@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Применяем шрифт Bebas Neue ко всем элементам */
+* {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+/* Стили для горизонтального меню */
+.horizontal-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Стили для ссылок в меню */
+.horizontal-menu a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Стили для левых и правых элементов меню */
+.left-item a, .right-item a {
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+.container {
+       margin-right: 100px; /* Сдвигает блок влево */
+   }
+   
