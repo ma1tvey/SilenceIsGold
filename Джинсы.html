@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jeans Fapeng: Vintage</title>
+  <link rel="icon" type="image/png" href="icon.png">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="sig.css">
+  <style>
+    body {
+      text-align: center; /* Центрирование содержимого */
+      margin: 0; /* Убирает отступы */
+      padding: 20px; /* Добавляет отступы для удобства */
+    }
+    
+    .image-container {
+      display: inline-block; /* Для центрирования блока */
+      margin: 20px auto; /* Центрирование блока с изображением */
+      position: relative; /* Позволяет позиционировать кнопки */
+    }
+    
+    img {
+      max-width: 100%; /* Ограничивает ширину */
+      border: 1px solid #000; /* Рамка для изображения */
+      border-radius: 8px; /* Скругление углов */
+      display: none; /* Скрываем изображения по умолчанию */
+    }
+
+    .active {
+      display: block; /* Показываем только активное изображение */
+    }
+
+    .nav-button {
+      position: absolute; /* Позиционирование кнопок */
+      top: 50%;
+      transform: translateY(-50%); /* Центрирование по вертикали */
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #000;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .prev {
+      left: 10px; /* Кнопка "Назад" */
+    }
+
+    .next {
+      right: 10px; /* Кнопка "Вперед" */
+    }
+
+    nav {
+      margin-bottom: 20px; /* Отступ между навигацией и изображением */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main">
+    <nav>
+      <ul class="horizontal-menu">
+        <li class="left-item"><a href="shop.html">·shop</a></li>
+        <li class="center-item"><a href="SiG.html">Silence is Gold</a></li>
+        <li class="right-item"><a href="https://t.me/+0ZJRfL9Q6z9lMmVi">telegram</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+  <hr>
+  
+  <div class="image-container">
+    <img src="announcement.jpg" alt="Объявление 1" class="active">
+    <img src="announcement2.jpg" alt="Объявление 2">
+    
+    <div class="nav-button prev" onclick="changeImage(-1)">&#10094;</div>
+    <div class="nav-button next" onclick="changeImage(1)">&#10095;</div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.image-container img');
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) {
+          img.classList.add('active');
+        }
+      });
+    }
+
+    function changeImage(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) {
+        currentIndex = images.length - 1; // Зацикливание
+      } else if (currentIndex >= images.length) {
+        currentIndex = 0; // Зацикливание
+      }
+      showImage(currentIndex);
+    }
+  </script>
+
+</body>
+</html>
